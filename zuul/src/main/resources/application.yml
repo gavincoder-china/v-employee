@@ -1,0 +1,21 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: v-zuul
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+##网关
+zuul:
+  routes:
+    gavin-web:
+      path: /web/**
+      serviceId: v-web
+
+#      url: https://www.baidu.com/

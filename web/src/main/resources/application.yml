@@ -1,0 +1,45 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: v-web
+#  redis:
+#    host: 106.15.90.2
+#    port: 6379
+#  activemq:
+#    broker-url: tcp://106.15.90.2:61616
+#    user: admin
+#    password: admin
+#    packages:
+#      trust-all: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#ribbon:
+#  ReadTimeout: 60000
+#  ConnectTimeout: 60000
+#  eureka:
+#    enbale: true
+
+
+feign:
+  hystrix:
+    enabled: true
+
+
+
+
+#负载均衡
+v-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+
+
+##网关
+#zuul:
+#  routes:
+#    gavin:
+#      path: /gavin/**
+#      url: https://www.baidu.com/

@@ -1,0 +1,17 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: v-service
+  mail:
+    host: smtp.163.com
+    username: gavincoder@163.com
+    password: qwertyuiop123
+    default-encoding: utf-8
+
+
+
+
+
+

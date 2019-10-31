@@ -1,0 +1,40 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: v-service
+  mail:
+    host: smtp.163.com
+    username: gavincoder@163.com
+    password: qwertyuiop123
+    default-encoding: utf-8
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    #    ?characterEncoding=utf8&useSSL=true
+    username: root
+    password: '123456'
+
+#  redis:
+#    host: 106.15.90.2
+#    port: 6379
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/test
+#    #    ?characterEncoding=utf8&useSSL=true
+#    username: root
+#    password: '123456'
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+

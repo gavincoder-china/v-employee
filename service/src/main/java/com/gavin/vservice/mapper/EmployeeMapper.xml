@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gavin.vservice.mapper.EmployeeMapper">
+  <resultMap id="BaseResultMap" type="com.gavin.vservice.dto.Employee">
+    <!--@mbg.generated-->
+    <!--@Table employee-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="gender" jdbcType="CHAR" property="gender" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="idCard" jdbcType="CHAR" property="idcard" />
+    <result column="wedlock" jdbcType="OTHER" property="wedlock" />
+    <result column="nationId" jdbcType="INTEGER" property="nationid" />
+    <result column="nativePlace" jdbcType="VARCHAR" property="nativeplace" />
+    <result column="politicId" jdbcType="INTEGER" property="politicid" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="departmentId" jdbcType="INTEGER" property="departmentid" />
+    <result column="jobLevelId" jdbcType="INTEGER" property="joblevelid" />
+    <result column="posId" jdbcType="INTEGER" property="posid" />
+    <result column="engageForm" jdbcType="VARCHAR" property="engageform" />
+    <result column="tiptopDegree" jdbcType="OTHER" property="tiptopdegree" />
+    <result column="specialty" jdbcType="VARCHAR" property="specialty" />
+    <result column="school" jdbcType="VARCHAR" property="school" />
+    <result column="beginDate" jdbcType="DATE" property="begindate" />
+    <result column="workState" jdbcType="OTHER" property="workstate" />
+    <result column="workID" jdbcType="CHAR" property="workid" />
+    <result column="contractTerm" jdbcType="DOUBLE" property="contractterm" />
+    <result column="conversionTime" jdbcType="DATE" property="conversiontime" />
+    <result column="notWorkDate" jdbcType="DATE" property="notworkdate" />
+    <result column="beginContract" jdbcType="DATE" property="begincontract" />
+    <result column="endContract" jdbcType="DATE" property="endcontract" />
+    <result column="workAge" jdbcType="INTEGER" property="workage" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`, gender, birthday, idCard, wedlock, nationId, nativePlace, politicId, 
+    email, phone, address, departmentId, jobLevelId, posId, engageForm, tiptopDegree, 
+    specialty, school, beginDate, workState, workID, contractTerm, conversionTime, notWorkDate, 
+    beginContract, endContract, workAge
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from employee
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from employee
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gavin.vservice.dto.Employee" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into employee (`name`, gender, birthday, 
+      idCard, wedlock, nationId, 
+      nativePlace, politicId, email, 
+      phone, address, departmentId, 
+      jobLevelId, posId, engageForm, 
+      tiptopDegree, specialty, school, 
+      beginDate, workState, workID, 
+      contractTerm, conversionTime, notWorkDate, 
+      beginContract, endContract, workAge
+      )
+    values (#{name,jdbcType=VARCHAR}, #{gender,jdbcType=CHAR}, #{birthday,jdbcType=DATE}, 
+      #{idcard,jdbcType=CHAR}, #{wedlock,jdbcType=OTHER}, #{nationid,jdbcType=INTEGER}, 
+      #{nativeplace,jdbcType=VARCHAR}, #{politicid,jdbcType=INTEGER}, #{email,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{departmentid,jdbcType=INTEGER}, 
+      #{joblevelid,jdbcType=INTEGER}, #{posid,jdbcType=INTEGER}, #{engageform,jdbcType=VARCHAR}, 
+      #{tiptopdegree,jdbcType=OTHER}, #{specialty,jdbcType=VARCHAR}, #{school,jdbcType=VARCHAR}, 
+      #{begindate,jdbcType=DATE}, #{workstate,jdbcType=OTHER}, #{workid,jdbcType=CHAR}, 
+      #{contractterm,jdbcType=DOUBLE}, #{conversiontime,jdbcType=DATE}, #{notworkdate,jdbcType=DATE}, 
+      #{begincontract,jdbcType=DATE}, #{endcontract,jdbcType=DATE}, #{workage,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective"  parameterType="com.gavin.vservice.dto.Employee" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        `id`,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="idcard != null">
+        idCard,
+      </if>
+      <if test="wedlock != null">
+        wedlock,
+      </if>
+      <if test="nationid != null">
+        nationId,
+      </if>
+      <if test="nativeplace != null">
+        nativePlace,
+      </if>
+      <if test="politicid != null">
+        politicId,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="departmentid != null">
+        departmentId,
+      </if>
+      <if test="joblevelid != null">
+        jobLevelId,
+      </if>
+      <if test="posid != null">
+        posId,
+      </if>
+      <if test="engageform != null">
+        engageForm,
+      </if>
+      <if test="tiptopdegree != null">
+        tiptopDegree,
+      </if>
+      <if test="specialty != null">
+        specialty,
+      </if>
+      <if test="school != null">
+        school,
+      </if>
+      <if test="begindate != null">
+        beginDate,
+      </if>
+      <if test="workstate != null">
+        workState,
+      </if>
+      <if test="workid != null">
+        workID,
+      </if>
+      <if test="contractterm != null">
+        contractTerm,
+      </if>
+      <if test="conversiontime != null">
+        conversionTime,
+      </if>
+      <if test="notworkdate != null">
+        notWorkDate,
+      </if>
+      <if test="begincontract != null">
+        beginContract,
+      </if>
+      <if test="endcontract != null">
+        endContract,
+      </if>
+      <if test="workage != null">
+        workAge,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=CHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="idcard != null">
+        #{idcard,jdbcType=CHAR},
+      </if>
+      <if test="wedlock != null">
+        #{wedlock,jdbcType=OTHER},
+      </if>
+      <if test="nationid != null">
+        #{nationid,jdbcType=INTEGER},
+      </if>
+      <if test="nativeplace != null">
+        #{nativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="politicid != null">
+        #{politicid,jdbcType=INTEGER},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentid != null">
+        #{departmentid,jdbcType=INTEGER},
+      </if>
+      <if test="joblevelid != null">
+        #{joblevelid,jdbcType=INTEGER},
+      </if>
+      <if test="posid != null">
+        #{posid,jdbcType=INTEGER},
+      </if>
+      <if test="engageform != null">
+        #{engageform,jdbcType=VARCHAR},
+      </if>
+      <if test="tiptopdegree != null">
+        #{tiptopdegree,jdbcType=OTHER},
+      </if>
+      <if test="specialty != null">
+        #{specialty,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null">
+        #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="begindate != null">
+        #{begindate,jdbcType=DATE},
+      </if>
+      <if test="workstate != null">
+        #{workstate,jdbcType=OTHER},
+      </if>
+      <if test="workid != null">
+        #{workid,jdbcType=CHAR},
+      </if>
+      <if test="contractterm != null">
+        #{contractterm,jdbcType=DOUBLE},
+      </if>
+      <if test="conversiontime != null">
+        #{conversiontime,jdbcType=DATE},
+      </if>
+      <if test="notworkdate != null">
+        #{notworkdate,jdbcType=DATE},
+      </if>
+      <if test="begincontract != null">
+        #{begincontract,jdbcType=DATE},
+      </if>
+      <if test="endcontract != null">
+        #{endcontract,jdbcType=DATE},
+      </if>
+      <if test="workage != null">
+        #{workage,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gavin.vservice.dto.Employee">
+    <!--@mbg.generated-->
+    update employee
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=CHAR},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="idcard != null">
+        idCard = #{idcard,jdbcType=CHAR},
+      </if>
+      <if test="wedlock != null">
+        wedlock = #{wedlock,jdbcType=OTHER},
+      </if>
+      <if test="nationid != null">
+        nationId = #{nationid,jdbcType=INTEGER},
+      </if>
+      <if test="nativeplace != null">
+        nativePlace = #{nativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="politicid != null">
+        politicId = #{politicid,jdbcType=INTEGER},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentid != null">
+        departmentId = #{departmentid,jdbcType=INTEGER},
+      </if>
+      <if test="joblevelid != null">
+        jobLevelId = #{joblevelid,jdbcType=INTEGER},
+      </if>
+      <if test="posid != null">
+        posId = #{posid,jdbcType=INTEGER},
+      </if>
+      <if test="engageform != null">
+        engageForm = #{engageform,jdbcType=VARCHAR},
+      </if>
+      <if test="tiptopdegree != null">
+        tiptopDegree = #{tiptopdegree,jdbcType=OTHER},
+      </if>
+      <if test="specialty != null">
+        specialty = #{specialty,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null">
+        school = #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="begindate != null">
+        beginDate = #{begindate,jdbcType=DATE},
+      </if>
+      <if test="workstate != null">
+        workState = #{workstate,jdbcType=OTHER},
+      </if>
+      <if test="workid != null">
+        workID = #{workid,jdbcType=CHAR},
+      </if>
+      <if test="contractterm != null">
+        contractTerm = #{contractterm,jdbcType=DOUBLE},
+      </if>
+      <if test="conversiontime != null">
+        conversionTime = #{conversiontime,jdbcType=DATE},
+      </if>
+      <if test="notworkdate != null">
+        notWorkDate = #{notworkdate,jdbcType=DATE},
+      </if>
+      <if test="begincontract != null">
+        beginContract = #{begincontract,jdbcType=DATE},
+      </if>
+      <if test="endcontract != null">
+        endContract = #{endcontract,jdbcType=DATE},
+      </if>
+      <if test="workage != null">
+        workAge = #{workage,jdbcType=INTEGER},
+      </if>
+    </set>
+  </update>
+  <select id="selectByName" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from employee
+    <if test="name != null">
+      where `name`  like concat('%',#{name,jdbcType=VARCHAR},'%')
+    </if>
+  </select>
+
+<!--auto generated by MybatisCodeHelper on 2019-10-31-->
+  <update id="updateByPrimaryKey" parameterType="com.gavin.vservice.dto.Employee">
+    <!--@mbg.generated-->
+    update employee
+    set `name` = #{name,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=CHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      idCard = #{idcard,jdbcType=CHAR},
+      wedlock = #{wedlock,jdbcType=OTHER},
+      nationId = #{nationid,jdbcType=INTEGER},
+      nativePlace = #{nativeplace,jdbcType=VARCHAR},
+      politicId = #{politicid,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      departmentId = #{departmentid,jdbcType=INTEGER},
+      jobLevelId = #{joblevelid,jdbcType=INTEGER},
+      posId = #{posid,jdbcType=INTEGER},
+      engageForm = #{engageform,jdbcType=VARCHAR},
+      tiptopDegree = #{tiptopdegree,jdbcType=OTHER},
+      specialty = #{specialty,jdbcType=VARCHAR},
+      school = #{school,jdbcType=VARCHAR},
+      beginDate = #{begindate,jdbcType=DATE},
+      workState = #{workstate,jdbcType=OTHER},
+      workID = #{workid,jdbcType=CHAR},
+      contractTerm = #{contractterm,jdbcType=DOUBLE},
+      conversionTime = #{conversiontime,jdbcType=DATE},
+      notWorkDate = #{notworkdate,jdbcType=DATE},
+      beginContract = #{begincontract,jdbcType=DATE},
+      endContract = #{endcontract,jdbcType=DATE},
+      workAge = #{workage,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <select id="selectByNameWithPage" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from employee
+    <if test="name != null">
+      where `name`  like concat('%',#{name,jdbcType=VARCHAR},'%')
+    </if>
+    limit #{start,jdbcType=INTEGER} ,#{offset,jdbcType=INTEGER}
+  </select>
+</mapper>
